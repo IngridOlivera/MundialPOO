@@ -4,7 +4,7 @@ title Diagrama de Clases - Mundial de Fútbol
 
 class Torneo {
 - nombre: String
-- año: String
+- año: int
 - sede: String
 - grupos: List<Grupo>
 - partidos: List<Partido>
