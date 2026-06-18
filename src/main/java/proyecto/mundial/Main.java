@@ -98,20 +98,24 @@ public class Main {
                     break;
                 case 2:
                     opcionValida = true;
-                    System.out.println("Torneos disponibles: ");
+                    if (!torneos.isEmpty()) {
+                        System.out.println("Torneos disponibles: ");
 
-                    for(int i=0; i<torneos.size(); i++){
-                        System.out.println((i + 1) + " - " + torneos.get(i).getNombre());
-                    }
-                    while (torneoActual==null) {
-                        int opcionTorneo = entrada.nextInt();
-                        entrada.nextLine();
-
-                        if (opcionTorneo >= 1 && opcionTorneo <= torneos.size()) {
-                            torneoActual = torneos.get(opcionTorneo - 1);
-                        } else {
-                            System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                        for (int i = 0; i < torneos.size(); i++) {
+                            System.out.println((i + 1) + " - " + torneos.get(i).getNombre());
                         }
+                        while (torneoActual == null) {
+                            int opcionTorneo = entrada.nextInt();
+                            entrada.nextLine();
+
+                            if (opcionTorneo >= 1 && opcionTorneo <= torneos.size()) {
+                                torneoActual = torneos.get(opcionTorneo - 1);
+                            } else {
+                                System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                            }
+                        }
+                    } else {
+                        System.out.println("No hay torneos registrados. Por favor, cree un nuevo torneo.");
                     }
                     break;
                 case 3:
@@ -157,20 +161,24 @@ public class Main {
                     break;
                 case 2:
                     opcionValida = true;
-                    System.out.println("Selecciones disponibles: ");
+                    if (!torneoActual.getSelecciones().isEmpty()) {
+                        System.out.println("Selecciones disponibles: ");
 
-                    for(int i=0; i<torneoActual.getSelecciones().size(); i++){
-                        System.out.println((i + 1) + " - " + torneoActual.getSelecciones().get(i).getNombre());
-                    }
-                    while (seleccionActual == null) {
-                        int opcionSeleccion = entrada.nextInt();
-                        entrada.nextLine();
-
-                        if (opcionSeleccion >= 1 && opcionSeleccion <= torneoActual.getSelecciones().size()) {
-                            seleccionActual = torneoActual.getSelecciones().get(opcionSeleccion - 1);
-                        } else {
-                            System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                        for (int i = 0; i < torneoActual.getSelecciones().size(); i++) {
+                            System.out.println((i + 1) + " - " + torneoActual.getSelecciones().get(i).getNombre());
                         }
+                        while (seleccionActual == null) {
+                            int opcionSeleccion = entrada.nextInt();
+                            entrada.nextLine();
+
+                            if (opcionSeleccion >= 1 && opcionSeleccion <= torneoActual.getSelecciones().size()) {
+                                seleccionActual = torneoActual.getSelecciones().get(opcionSeleccion - 1);
+                            } else {
+                                System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                            }
+                        }
+                    } else {
+                        System.out.println("No hay selecciones registradas. Por favor, cree una nueva seleccion.");
                     }
                     break;
                 case 0:
@@ -221,20 +229,24 @@ public class Main {
                     break;
                 case 2:
                     opcionValida = true;
-                    System.out.println("Jugadores registrados: ");
+                    if (!seleccionActual.getJugadores().isEmpty()) {
+                        System.out.println("Jugadores registrados: ");
 
-                    for(int i=0; i<seleccionActual.getJugadores().size(); i++){
-                        System.out.println((i + 1) + " - " + seleccionActual.getJugadores().get(i).getNombreCompleto());
-                    }
-                    while (jugadorActual == null) {
-                        int opcionJugador = entrada.nextInt();
-                        entrada.nextLine();
-
-                        if (opcionJugador >= 1 && opcionJugador <= seleccionActual.getJugadores().size()) {
-                            jugadorActual = seleccionActual.getJugadores().get(opcionJugador - 1);
-                        } else {
-                            System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                        for (int i = 0; i < seleccionActual.getJugadores().size(); i++) {
+                            System.out.println((i + 1) + " - " + seleccionActual.getJugadores().get(i).getNombreCompleto());
                         }
+                        while (jugadorActual == null) {
+                            int opcionJugador = entrada.nextInt();
+                            entrada.nextLine();
+
+                            if (opcionJugador >= 1 && opcionJugador <= seleccionActual.getJugadores().size()) {
+                                jugadorActual = seleccionActual.getJugadores().get(opcionJugador - 1);
+                            } else {
+                                System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                            }
+                        }
+                    } else {
+                        System.out.println("No hay jugadores registrados. Por favor, añada un nuevo jugador.");
                     }
                     break;
                 case 0:
