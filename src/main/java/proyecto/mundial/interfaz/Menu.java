@@ -24,28 +24,46 @@ public class Menu {
     }
 
     public void mostrarMenuGeneral() {
-        while (menuActual.equals ("general") && !salir) {
-            mostrarMenuInicial();
-            seleccionarTorneo();
+        while (!salir) {
+            if (menuActual.equals("general")) {
+                mostrarMenuInicial();
+                seleccionarTorneo();
+            }
+
+            if (menuActual.equals("torneo")) {
+                mostrarMenuTorneoInicial();
+            }
+
+            if (menuActual.equals("seleccion")) {
+                mostrarMenuSeleccionInicial();
+            }
+
+            if (menuActual.equals("jugador")) {
+                mostrarMenuJugador();
+            }
+
+            if (menuActual.equals("grupo")) {
+                mostrarMenuGrupoInicial();
+            }
+
+            if (menuActual.equals("partido")) {
+                mostrarMenuPartidoInicial();
+            }
         }
     }
 
     private void mostrarMenuTorneoInicial() {
-        while (menuActual.equals("torneo") && !salir)  {
-            mostrarMenuTorneo();
-            opcionesDeTorneo();
-        }
+        mostrarMenuTorneo();
+        opcionesDeTorneo();
     }
 
     private void mostrarMenuSeleccionInicial () {
-        while (menuActual.equals("seleccion")&& !salir) {
-            mostrarMenuSeleccion();
-            opcionesDeSeleccion();
-        }
+        mostrarMenuSeleccion();
+        opcionesDeSeleccion();
     }
 
     private void mostrarMenuJugador(){
-        if (jugadorActual != null && menuActual.equals("jugador") && !salir) {
+        if (jugadorActual != null) {
             System.out.println("Informacion del jugador: " + jugadorActual.getNombreCompleto());
             System.out.println("Edad: " + jugadorActual.getEdad());
             System.out.println("Nacionalidad: " + jugadorActual.getNacionalidad());
@@ -61,22 +79,16 @@ public class Menu {
                 jugadorActual = null;
                 menuActual = menuAnterior;
                 menuAnterior = menuPadre;
-                mostrarMenuSeleccionInicial();
             }
-
         }
     }
     private void mostrarMenuGrupoInicial(){
-        while (menuActual.equals("grupo") && !salir) {
-            mostrarMenuGrupo();
-            opcionesDeGrupo();
-        }
+        mostrarMenuGrupo();
+        opcionesDeGrupo();
     }
     private void mostrarMenuPartidoInicial(){
-        while (menuActual.equals("partido") && !salir) {
-            mostrarMenuPartido();
-            opcionesDePartido();
-        }
+        mostrarMenuPartido();
+        opcionesDePartido();
     }
     private void mostrarMenuInicial() {
         System.out.println("¡Bienvenido al sistema de gestión del Mundial de Fútbol!");
@@ -126,7 +138,6 @@ public class Menu {
                                 torneoActual = torneos.get(opcionTorneo - 1);
                                 menuActual = "torneo";
                                 menuAnterior = "general";
-                                mostrarMenuTorneoInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -174,7 +185,6 @@ public class Menu {
                     torneoActual = null;
                     menuActual = "general";
                     menuAnterior = "";
-                    mostrarMenuGeneral();
                     break;
                 case 1:
                     opcionValida = true;
@@ -203,7 +213,6 @@ public class Menu {
                                 seleccionActual = torneoActual.getSelecciones().get(opcionSeleccion - 1);
                                 menuActual = "seleccion";
                                 menuAnterior = "torneo";
-                                mostrarMenuSeleccionInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -235,7 +244,6 @@ public class Menu {
                                 grupoActual = torneoActual.getGrupos().get(opcionGrupo - 1);
                                 menuActual = "grupo";
                                 menuAnterior = "torneo";
-                                mostrarMenuGrupoInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -293,7 +301,6 @@ public class Menu {
                                 partidoActual = torneoActual.getPartidos().get(opcionPartido - 1);
                                 menuActual = "partido";
                                 menuAnterior = "torneo";
-                                mostrarMenuPartidoInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -348,12 +355,10 @@ public class Menu {
                         seleccionActual = null;
                         menuActual = "torneo";
                         menuAnterior = "general";
-                        mostrarMenuTorneoInicial();
                     } else if (menuAnterior.equals("grupo")) {
                         seleccionActualGrupo = null;
                         menuActual = "grupo";
                         menuAnterior = "torneo";
-                        mostrarMenuGrupoInicial();
                     }
                     break;
                 case 1:
@@ -393,7 +398,6 @@ public class Menu {
                                 menuActual = "jugador";
                                 menuPadre = menuAnterior;
                                 menuAnterior = "seleccion";
-                                mostrarMenuJugador();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -480,7 +484,6 @@ public class Menu {
                     grupoActual = null;
                     menuActual = "torneo";
                     menuAnterior = "general";
-                    mostrarMenuTorneoInicial();
                     break;
                 case 1:
                     opcionValida = true;
@@ -516,7 +519,6 @@ public class Menu {
                                 seleccionActualGrupo = grupoActual.getSelecciones().get(opcionSeleccionGrupo - 1);
                                 menuActual = "seleccion";
                                 menuAnterior = "grupo";
-                                mostrarMenuSeleccionInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -570,7 +572,6 @@ public class Menu {
                                 partidoActualGrupo = grupoActual.getPartidos().get(opcionPartido - 1);
                                 menuActual = "partido";
                                 menuAnterior = "grupo";
-                                mostrarMenuPartidoInicial();
                             } else {
                                 System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
                             }
@@ -629,12 +630,10 @@ public class Menu {
                         partidoActual = null;
                         menuActual = "torneo";
                         menuAnterior = "general";
-                        mostrarMenuTorneoInicial();
                     }else if (menuAnterior.equals("grupo")) {
                         partidoActualGrupo = null;
                         menuActual = "grupo";
                         menuAnterior = "torneo";
-                        mostrarMenuGrupoInicial();
                     }
                     break;
                 case 1:
