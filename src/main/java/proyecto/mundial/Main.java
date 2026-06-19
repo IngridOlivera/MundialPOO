@@ -1,15 +1,18 @@
 package proyecto.mundial;
 
 import proyecto.mundial.interfaz.Menu;
-import proyecto.mundial.modelos.*;
-import proyecto.mundial.persistencia.LecturaJson;
+import proyecto.mundial.modelos.Torneo;
+import proyecto.mundial.persistencia.Persistencia;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        LecturaJson lectura = new LecturaJson();
-        Menu menu = new Menu(lectura.cargarDatos());
+        Persistencia persistencia = new Persistencia();
+        List<Torneo> torneos = persistencia.consultarDatos();
+        Menu menu = new Menu(torneos);
         menu.mostrarMenuGeneral();
+        persistencia.guardarDatos(torneos);
     }
 }

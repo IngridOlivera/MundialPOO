@@ -1,13 +1,13 @@
 package proyecto.mundial.interfaz;
 
 import proyecto.mundial.modelos.*;
+import proyecto.mundial.persistencia.Persistencia;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    private List<Torneo> torneos = new ArrayList<>();
+    private List<Torneo> torneos;
     private Torneo torneoActual;
     private Seleccion seleccionActual;
     private Seleccion seleccionActualGrupo;
