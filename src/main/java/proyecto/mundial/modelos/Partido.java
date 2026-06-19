@@ -30,6 +30,11 @@ public class Partido {
     public void actualizarEstado(String estado) {
         if (!this.estado.equals("Finalizado")) {
             this.estado = estado;
+
+            if (estado.equals("Finalizado")) {
+                seleccionLocal.actualizarEstadistica(golesLocal,golesVisitante);
+                seleccionVisitante.actualizarEstadistica(golesVisitante,golesLocal);
+            }
         }
     }
 

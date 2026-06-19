@@ -26,7 +26,11 @@ public class Seleccion {
         this.directorTecnico = dt;
     }
 
-    public void actualizarEstadistica(Partido partido){
+    public void actualizarEstadistica(int golesAFavor, int golesEnContra){
+        if (estadistica==null){
+            estadistica = new EstadisticaDeSeleccion();
+        }
+        estadistica.actualizarEstadistica(golesAFavor,golesEnContra);
     }
 
     public String getNombre() {
