@@ -1,129 +1,156 @@
 @startuml
 title Diagrama de Clases - Mundial de Fútbol
 
-
 class Torneo {
-- nombre: String
-- año: int
-- sede: String
-- grupos: List<Grupo>
-- partidos: List<Partido>
-- selecciones: List<Seleccion>
-+ Torneo(nombre: String, año: String, sede: String)
-+ agregarGrupo(grupo: Grupo): void
-+ agregarPartido(partido: Partido): void
-+ agregarSeleccion(seleccion: Seleccion): void
-+ getNombre(): String
-+ getAño(): String
-+ getSede(): String
-+ getGrupos(): List<Grupo>
-+ getPartidos(): List<Partido>
-+ getSelecciones(): List<Seleccion>
+  - nombre: String
+  - año: int
+  - sede: String
+  - grupos: List<Grupo>
+  - partidos: List<Partido>
+  - selecciones: List<Seleccion>
+  + Torneo(nombre: String, año: int, sede: String)
+  + agregarGrupo(grupo: Grupo): void
+  + agregarPartido(partido: Partido): void
+  + agregarSeleccion(seleccion: Seleccion): void
+  + getNombre(): String
+  + getAño(): int
+  + getSede(): String
+  + getGrupos(): List<Grupo>
+  + getPartidos(): List<Partido>
+  + getSelecciones(): List<Seleccion>
+  + buscarSeleccionPorNombre(nombre: String): Seleccion
 }
+
 class Grupo {
-- nombre: String
-- selecciones: List<Seleccion>
-- partidos: List<Partido>
-+ Grupo(nombre: String)
-+ agregarSeleccion(seleccion: Seleccion): void
-+ agregarPartido(partido: Partido): void
-+ getNombre(): String
-+ getSelecciones(): List<Seleccion>
-+ getPartidos(): List<Partido>
+  - nombre: String
+  - selecciones: List<Seleccion>
+  - partidos: List<Partido>
+  + Grupo(nombre: String)
+  + agregarSeleccion(seleccion: Seleccion): void
+  + agregarPartido(partido: Partido): void
+  + getNombre(): String
+  + getSelecciones(): List<Seleccion>
+  + getPartidos(): List<Partido>
 }
+
 class Seleccion {
-- nombre: String
-- pais: String
-- confederacion: String
-- jugadores: List<Jugador>
-- directorTecnico: DirectorTecnico
-- estadistica: EstadisticaDeSeleccion
-+ Seleccion(nombre: String, pais: String, confederacion: String)
-+ agregarJugador(jugador: Jugador): void
-+ asignarDirectorTecnico(director: DirectorTecnico): void
-+ actualizarEstadistica(partido: Partido): void
-+ getNombre(): String
-+ getPais(): String
-+ getConfederacion(): String
-+ getJugadores(): List<Jugador>
-+ getDirectorTecnico(): DirectorTecnico
-+ getEstadistica(): EstadisticaDeSeleccion
+  - nombre: String
+  - pais: String
+  - confederacion: String
+  - jugadores: List<Jugador>
+  - directorTecnico: DirectorTecnico
+  - estadistica: EstadisticaDeSeleccion
+  + Seleccion(nombre: String, pais: String, confederacion: String)
+  + agregarJugador(jugador: Jugador): void
+  + asignarDirectorTecnico(dt: DirectorTecnico): void
+  + actualizarEstadistica(golesAFavor: int, golesEnContra: int): void
+  + getNombre(): String
+  + getPais(): String
+  + getConfederacion(): String
+  + getJugadores(): List<Jugador>
+  + getDirectorTecnico(): DirectorTecnico
+  + getEstadistica(): EstadisticaDeSeleccion
 }
+
 abstract class Persona {
-- nombre: String
-- apellido: String
-- edad: int
-- nacionalidad: String
-+ Persona(nombre: String, apellido: String, edad: int, nacionalidad: String)
-+ getNombreCompleto(): String
-+ getEdad(): int
-+ getNacionalidad(): String
-}
-class Jugador extends Persona {
-- posicion: String
-- numero: int
-+ Jugador(nombre: String, apellido: String, edad: int, nacionalidad: String, posicion: String, numero: int)
-+ getPosicion(): String
-+ getNumero(): int
+  - nombre: String
+  - apellido: String
+  - edad: int
+  - nacionalidad: String
+  + Persona(nombre: String, apellido: String, edad: int, nacionalidad: String)
+  + getNombreCompleto(): String
+  + getNombre(): String
+  + getApellido(): String
+  + getEdad(): int
+  + getNacionalidad(): String
 }
 
-class DirectorTecnico extends Persona {
-- experiencia: int
-- estiloDeJuego: String
-+ DirectorTecnico(nombre: String, apellido: String, edad: int, nacionalidad: String, experiencia: int, estiloDeJuego: String)
-+ getExperiencia(): int
-+ getEstiloDeJuego(): String
+class Jugador {
+  - posicion: String
+  - numero: int
+  + Jugador(nombre: String, apellido: String, edad: int, nacionalidad: String, posicion: String, numero: int)
+  + getPosicion(): String
+  + getNumero(): int
 }
+
+class DirectorTecnico {
+  - experiencia: int
+  - estiloDeJuego: String
+  + DirectorTecnico(nombre: String, apellido: String, edad: int, nacionalidad: String, experiencia: int, estiloDeJuego: String)
+  + getExperiencia(): int
+  + getEstiloDeJuego(): String
+}
+
 class Partido {
-- seleccionLocal: Seleccion
-- seleccionVisitante: Seleccion
-- fecha: String
-- golesLocal: int
-- golesVisitante: int
-- estado: String
-+ Partido(seleccionLocal: Seleccion, seleccionVisitante: Seleccion, fecha: String)
-+ registrarResultado(golesLocal: int, golesVisitante: int): void
-+ getSeleccionLocal(): Seleccion
-+ getSeleccionVisitante(): Seleccion
-+ getFecha(): String
-+ getGolesLocal(): int
-+ getGolesVisitante(): int
-+ getEstado(): String
-+ setEstado(estado: String): void
-}
-class EstadisticaDeSeleccion {
-- puntos: int
-- partidosJugados: int
-- partidosGanados: int
-- partidosPerdidos: int
-- partidosEmpatados: int
-- golesAFavor: int
-- golesEnContra: int
-- diferenciaDeGoles: int
-+ EstadisticaDeSeleccion()
-+ actualizarEstadistica(golesFavot: int, golesContra: int): void
-- calcularPuntos(golesFavot: int, golesContra: int): int
-- calcularDiferenciaDeGoles(golesFavot: int, golesContra: int): int
-+ getPuntos(): int
-+ getPartidosJugados(): int
-+ getPartidosGanados(): int
-+ getPartidosPerdidos(): int
-+ getPartidosEmpatados(): int
-+ getGolesAFavor(): int
-+ getGolesEnContra(): int
-+ getDiferenciaDeGoles(): int
+  - seleccionLocal: Seleccion
+  - seleccionVisitante: Seleccion
+  - fecha: String
+  - golesLocal: int
+  - golesVisitante: int
+  - estado: String
+  + Partido(seleccionLocal: Seleccion, seleccionVisitante: Seleccion, fecha: String)
+  + actualizarGolesLocal(golesLocales: int): void
+  + actualizarGolesVisitante(golesVisitante: int): void
+  + actualizarEstado(estado: String): void
+  + getSeleccionLocal(): Seleccion
+  + getSeleccionVisitante(): Seleccion
+  + getFecha(): String
+  + getGolesLocal(): int
+  + getGolesVisitante(): int
+  + getEstado(): String
+  + setEstado(estado: String): void
 }
 
-Seleccion "1" o-- "0..*"Jugador
-Seleccion "1" o-- "1" DirectorTecnico
-Seleccion "1" *-- "1" EstadisticaDeSeleccion
+class EstadisticaDeSeleccion {
+  - puntos: int
+  - partidosJugados: int
+  - partidosGanados: int
+  - partidosPerdidos: int
+  - partidosEmpatados: int
+  - golesAFavor: int
+  - golesEnContra: int
+  - diferenciaDeGoles: int
+  + EstadisticaDeSeleccion()
+  + actualizarEstadistica(golesAFavor: int, golesEnContra: int): void
+  - calcularPuntos(golesAFavor: int, golesEnContra: int): int
+  - calcularDiferenciaDeGoles(golesAFavor: int, golesEnContra: int): int
+  + getPuntos(): int
+  + getPartidosJugados(): int
+  + getPartidosGanados(): int
+  + getPartidosPerdidos(): int
+  + getPartidosEmpatados(): int
+  + getGolesAFavor(): int
+  + getGolesEnContra(): int
+  + getDiferenciaDeGoles(): int
+}
+
+' Clases de entrada, interfaz y persistencia: solo se muestran como referencia.
+class Main <<aplicación>> {
+  + main(args: String[]): void
+}
+class Menu <<interfaz>>
+class Persistencia <<persistencia>>
+class LecturaJson <<persistencia>>
+class EscrituraJson <<persistencia>>
+
+Jugador --|> Persona
+DirectorTecnico --|> Persona
+Seleccion "1" o-- "0..*" Jugador
+Seleccion "1" o-- "0..1" DirectorTecnico
+Seleccion "1" *-- "0..1" EstadisticaDeSeleccion
 Grupo "1" o-- "0..*" Seleccion
 Grupo "1" o-- "0..*" Partido
 Torneo "1" o-- "0..*" Grupo
 Torneo "1" o-- "0..*" Partido
 Torneo "1" o-- "0..*" Seleccion
-Partido "1" --> "1" Seleccion : seleccionLocal
-Partido "1" --> "1" Seleccion : seleccionVisitante
+Partido "0..*" --> "1" Seleccion : seleccionLocal
+Partido "0..*" --> "1" Seleccion : seleccionVisitante
+
+Main ..> Menu
+Main ..> Persistencia
+Menu ..> Torneo
+Persistencia *-- LecturaJson
+Persistencia *-- EscrituraJson
+Persistencia ..> Torneo
 
 @enduml
-
