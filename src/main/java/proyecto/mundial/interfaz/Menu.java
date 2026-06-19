@@ -323,7 +323,12 @@ public class Menu {
         } else {
             seleccion = seleccionActualGrupo;
         }
-        System.out.println("Menú de la seleccion:");
+        System.out.println("¡Bienvenido a la selección " + seleccion.getNombre() + "!");
+        System.out.println("==========================================================");
+        System.out.println("Nombre: " + seleccion.getNombre());
+        System.out.println("País: " + seleccion.getPais());
+        System.out.println("Confederación: " + seleccion.getConfederacion());
+        System.out.println("\nEn este menú puedes gestionar los jugadores, el director técnico y las estadísticas de la selección.");
         System.out.println("1 - Agregar un jugador a la seleccion.");
         System.out.println("2 - Ver informacion de un jugador exitente.");
         if (seleccion != null && seleccion.getDirectorTecnico() == null) {
@@ -601,6 +606,7 @@ public class Menu {
         System.out.println("Fecha del partido: " + partido.getFecha());
         System.out.println("Goles a favor: " + partido.getGolesLocal());
         System.out.println("Goles en contra: " + partido.getGolesVisitante());
+        System.out.println("Estado: " + partido.getEstado());
         System.out.println("\nEn este menú puedes gestionar todo lo relacionado con el partido, como el resultado, los goles, etc...");
         System.out.println("1. Actualizar goles a favor.");
         System.out.println("2. Actualizar goles en contra.");
