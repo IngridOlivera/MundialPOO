@@ -32,7 +32,6 @@ public class EstadisticaDeSeleccion {
     }
 
     private int calcularPuntos(int golesAFavor, int golesEnContra) {
-        return 0;
         int puntosObtenidos = 0;
         if (golesAFavor > golesEnContra) {
             this.partidosGanados += 1;
