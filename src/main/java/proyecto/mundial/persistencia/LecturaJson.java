@@ -10,10 +10,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class LecturaJson {
-    public Torneo cargarDatos() throws IOException {
+    public List<Torneo> cargarDatos() throws IOException {
         HashMap<Integer, Jugador> jugadores = cargarJugadores();
         HashMap<Integer, DirectorTecnico> directoresTecnicos = cargarDirectoresTecnico();
         HashMap<Integer, Seleccion> selecciones = cargarSelecciones(jugadores, directoresTecnicos);
@@ -30,15 +32,6 @@ public class LecturaJson {
         try (InputStreamReader lector = new InputStreamReader(archivo, StandardCharsets.UTF_8)){
             return JsonParser.parseReader(lector).getAsJsonArray();
 
-        }
-    }
-
-    private JsonObject leerObjecto(String nombreArchivo) throws IOException {
-        InputStream archivo = getClass().getClassLoader().getResourceAsStream(nombreArchivo);
-
-        assert archivo != null;
-        try (InputStreamReader lector = new InputStreamReader(archivo, StandardCharsets.UTF_8)){
-            return JsonParser.parseReader(lector).getAsJsonObject();
         }
     }
 
@@ -170,36 +163,44 @@ public class LecturaJson {
         return grupos;
     }
 
-    public Torneo cargarTorneo (HashMap<Integer, Seleccion> selecciones, HashMap<Integer, Partido> partidos,
+    public List<Torneo> cargarTorneo (HashMap<Integer, Seleccion> selecciones, HashMap<Integer, Partido> partidos,
                                 HashMap<Integer, Grupo> grupos) throws IOException {
-        JsonObject torneoJson = leerObjecto("torneo.json");
-        String nombre = torneoJson.get("nombre").getAsString();
-        int año = torneoJson.get("año").getAsInt();
-        String sede = torneoJson.get("sede").getAsString();
-        JsonArray seleccionIds = torneoJson.get("seleccionIds").getAsJsonArray();
-        JsonArray partidoIds = torneoJson.get("partidoIds").getAsJsonArray();
-        JsonArray grupoIds = torneoJson.get("grupoIds").getAsJsonArray();
+        JsonArray torneosJson = leerArchivo("torneo.json");
+        List<Torneo> torneos = new ArrayList<>();
 
-        Torneo torneo = new Torneo(nombre, año, sede);
+        for(JsonElement elemento : torneosJson){
+            JsonObject torneoJson = elemento.getAsJsonObject();
+            String nombre = torneoJson.get("nombre").getAsString();
+            int año = torneoJson.get("año").getAsInt();
+            String sede = torneoJson.get("sede").getAsString();
+            JsonArray seleccionIds = torneoJson.get("seleccionIds").getAsJsonArray();
+            JsonArray partidoIds = torneoJson.get("partidoIds").getAsJsonArray();
+            JsonArray grupoIds = torneoJson.get("grupoIds").getAsJsonArray();
 
-        for(JsonElement seleccionIdJson : seleccionIds){
-            int seleccionId = seleccionIdJson.getAsInt();
-            Seleccion seleccion = selecciones.get(seleccionId);
-            torneo.agregarSeleccion(seleccion);
+            Torneo torneo = new Torneo(nombre, año, sede);
+
+            for(JsonElement seleccionIdJson : seleccionIds){
+                int seleccionId = seleccionIdJson.getAsInt();
+                Seleccion seleccion = selecciones.get(seleccionId);
+                torneo.agregarSeleccion(seleccion);
+            }
+
+            for(JsonElement partidoIdJson : partidoIds){
+                int partidoId = partidoIdJson.getAsInt();
+                Partido partido = partidos.get(partidoId);
+                torneo.agregarPartido(partido);
+            }
+
+            for (JsonElement grupoIdJson : grupoIds){
+                int grupoId = grupoIdJson.getAsInt();
+                Grupo grupo = grupos.get(grupoId);
+                torneo.agregarGrupo(grupo);
+            }
+
+            torneos.add(torneo);
+
         }
 
-        for(JsonElement partidoIdJson : partidoIds){
-            int partidoId = partidoIdJson.getAsInt();
-            Partido partido = partidos.get(partidoId);
-            torneo.agregarPartido(partido);
-        }
-
-        for (JsonElement grupoIdJson : grupoIds){
-            int grupoId = grupoIdJson.getAsInt();
-            Grupo grupo = grupos.get(grupoId);
-            torneo.agregarGrupo(grupo);
-        }
-
-        return torneo;
+        return torneos;
     }
 }

@@ -20,6 +20,10 @@ public class Menu {
     private Partido partidoActual;
     private Partido partidoActualGrupo;
 
+    public Menu(List<Torneo> torneos) {
+        this.torneos = torneos;
+    }
+
     public void mostrarMenuGeneral() {
         while (menuActual.equals ("general") && !salir) {
             mostrarMenuInicial();
