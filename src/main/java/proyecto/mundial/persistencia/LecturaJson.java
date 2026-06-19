@@ -86,8 +86,6 @@ public class LecturaJson {
             String nombre = seleccion.get("nombre").getAsString();
             String pais = seleccion.get("pais").getAsString();
             String confederacion = seleccion.get("confederacion").getAsString();
-            int directorId = seleccion.get("directorTecnicoId").getAsInt();
-            int estadisticaId = seleccion.get("estadisticaId").getAsInt();
             JsonArray jugadoresJson = seleccion.get("jugadorIds").getAsJsonArray();
 
             Seleccion seleccionActual = new Seleccion(nombre, pais, confederacion);
@@ -97,7 +95,10 @@ public class LecturaJson {
                 Jugador jugador = jugadores.get(jugadorId);
                 seleccionActual.agregarJugador(jugador);
             }
-            seleccionActual.asignarDirectorTecnico(directoresTecnicos.get(directorId));
+            JsonElement directorIdJson = seleccion.get("directorTecnicoId");
+            if (directorIdJson != null && !directorIdJson.isJsonNull()) {
+                seleccionActual.asignarDirectorTecnico(directoresTecnicos.get(directorIdJson.getAsInt()));
+            }
 
             selecciones.put(id, seleccionActual);
 

@@ -5,7 +5,6 @@ import proyecto.mundial.modelos.*;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -52,7 +51,7 @@ public class EscrituraJson {
         guardarTorneos(torneos);
     }
 
-    private void prepararDatos(List<Torneo> torneos) throws IOException {
+    private void prepararDatos(List<Torneo> torneos) {
         limpiarDatos();
 
         for (Torneo torneo : torneos) {
@@ -78,7 +77,11 @@ public class EscrituraJson {
         this.selecciones.add(seleccion);
         seleccionesIds.put(seleccion, seleccionesIds.size());
 
-        for (Jugador jugador : jugadores) {
+        for (Jugador jugador : seleccion.getJugadores()) {
+            if (jugador == null) {
+                continue;
+            }
+
             if (!jugadoresIds.containsKey(jugador)) {
                 jugadores.add(jugador);
                 jugadoresIds.put(jugador, jugadores.size());
@@ -197,7 +200,7 @@ public class EscrituraJson {
             JsonObject partidoJson = new JsonObject();
             partidoJson.addProperty("id", partidosIds.get(partido));
             partidoJson.addProperty("seleccionLocalId", seleccionesIds.get(partido.getSeleccionLocal()));
-            partidoJson.addProperty("seleccionVisitantelId", seleccionesIds.get(partido.getSeleccionVisitante()));
+            partidoJson.addProperty("seleccionVisitanteId", seleccionesIds.get(partido.getSeleccionVisitante()));
             partidoJson.addProperty("fecha", partido.getFecha());
             partidoJson.addProperty("golesLocal", partido.getGolesLocal());
             partidoJson.addProperty("golesVisitante", partido.getGolesVisitante());
@@ -251,7 +254,7 @@ public class EscrituraJson {
             for (Grupo grupo: torneo.getGrupos()) {
                 idsGrupos.add(gruposIds.get(grupo));
             }
-            torneoJson.add("gruposIds", idsGrupos);
+            torneoJson.add("grupoIds", idsGrupos);
 
             JsonArray idsPartidos = new JsonArray();
             for (Partido partido: torneo.getPartidos()) {
