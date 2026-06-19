@@ -1,7 +1,6 @@
 package proyecto.mundial.interfaz;
 
 import proyecto.mundial.modelos.*;
-import proyecto.mundial.persistencia.Persistencia;
 
 import java.util.List;
 import java.util.Scanner;
@@ -119,7 +118,7 @@ public class Menu {
                         for (int i = 0; i < torneos.size(); i++) {
                             System.out.println((i + 1) + " - " + torneos.get(i).getNombre());
                         }
-                        while (torneoActual == null) {
+                        while (torneoActual == null && !salir) {
                             int opcionTorneo = entrada.nextInt();
                             entrada.nextLine();
 
@@ -196,7 +195,7 @@ public class Menu {
                         for (int i = 0; i < torneoActual.getSelecciones().size(); i++) {
                             System.out.println((i + 1) + " - " + torneoActual.getSelecciones().get(i).getNombre());
                         }
-                        while (seleccionActual == null) {
+                        while (seleccionActual == null && !salir) {
                             int opcionSeleccion = entrada.nextInt();
                             entrada.nextLine();
 
@@ -228,7 +227,7 @@ public class Menu {
                         for (int i = 0; i < torneoActual.getGrupos().size(); i++) {
                             System.out.println((i + 1) + " - " + torneoActual.getGrupos().get(i).getNombre());
                         }
-                        while (grupoActual == null) {
+                        while (grupoActual == null && !salir) {
                             int opcionGrupo = entrada.nextInt();
                             entrada.nextLine();
 
@@ -286,7 +285,7 @@ public class Menu {
                                     torneoActual.getPartidos().get(i).getSeleccionLocal().getNombre() + " vs " +
                                     torneoActual.getPartidos().get(i).getSeleccionVisitante().getNombre());
                         }
-                        while (partidoActual == null) {
+                        while (partidoActual == null && !salir) {
                             int opcionPartido = entrada.nextInt();
                             entrada.nextLine();
 
@@ -385,7 +384,7 @@ public class Menu {
                         for (int i = 0; i < seleccion.getJugadores().size(); i++) {
                             System.out.println((i + 1) + " - " + seleccion.getJugadores().get(i).getNombreCompleto());
                         }
-                        while (jugadorActual == null) {
+                        while (jugadorActual == null && !salir) {
                             int opcionJugador = entrada.nextInt();
                             entrada.nextLine();
 
@@ -509,7 +508,7 @@ public class Menu {
                         for (int i = 0; i < grupoActual.getSelecciones().size(); i++) {
                             System.out.println((i + 1) + " - " + grupoActual.getSelecciones().get(i).getNombre());
                         }
-                        while (seleccionActualGrupo == null) {
+                        while (seleccionActualGrupo == null && !salir) {
                             int opcionSeleccionGrupo = entrada.nextInt();
                             entrada.nextLine();
 
@@ -563,7 +562,7 @@ public class Menu {
                                     torneoActual.getPartidos().get(i).getSeleccionLocal().getNombre() + " vs " +
                                     torneoActual.getPartidos().get(i).getSeleccionVisitante().getNombre());
                         }
-                        while (partidoActualGrupo == null) {
+                        while (partidoActualGrupo == null && !salir) {
                             int opcionPartido = entrada.nextInt();
                             entrada.nextLine();
 
