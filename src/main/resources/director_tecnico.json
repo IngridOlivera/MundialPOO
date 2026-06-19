@@ -1,0 +1,434 @@
+﻿[
+    {
+        "id":  1,
+        "nombre":  "Javier",
+        "apellido":  "Aguirre",
+        "edad":  67,
+        "nacionalidad":  "México",
+        "experiencia":  31,
+        "estiloDeJuego":  "Equilibrado, intenso y de juego directo."
+    },
+    {
+        "id":  2,
+        "nombre":  "Hugo",
+        "apellido":  "Broos",
+        "edad":  74,
+        "nacionalidad":  "Sudáfrica",
+        "experiencia":  38,
+        "estiloDeJuego":  "Compacto, físico y de transiciones rápidas."
+    },
+    {
+        "id":  3,
+        "nombre":  "Myung-bo",
+        "apellido":  "Hong",
+        "edad":  57,
+        "nacionalidad":  "Corea del Sur",
+        "experiencia":  21,
+        "estiloDeJuego":  "Dinámico, ofensivo y de presión alta."
+    },
+    {
+        "id":  4,
+        "nombre":  "Miroslav",
+        "apellido":  "Koubek",
+        "edad":  74,
+        "nacionalidad":  "República Checa",
+        "experiencia":  43,
+        "estiloDeJuego":  "Ordenado, vertical y pragmático."
+    },
+    {
+        "id":  5,
+        "nombre":  "Jesse",
+        "apellido":  "Marsch",
+        "edad":  52,
+        "nacionalidad":  "Canadá",
+        "experiencia":  15,
+        "estiloDeJuego":  "Presión alta, vertical y agresivo."
+    },
+    {
+        "id":  6,
+        "nombre":  "Sergej",
+        "apellido":  "Barbarez",
+        "edad":  54,
+        "nacionalidad":  "Bosnia y Herzegovina",
+        "experiencia":  2,
+        "estiloDeJuego":  "Directo, físico y con vocación ofensiva."
+    },
+    {
+        "id":  7,
+        "nombre":  "Julen",
+        "apellido":  "Lopetegui",
+        "edad":  59,
+        "nacionalidad":  "Catar",
+        "experiencia":  23,
+        "estiloDeJuego":  "Posesión, presión alta y juego asociativo."
+    },
+    {
+        "id":  8,
+        "nombre":  "Murat",
+        "apellido":  "Yakin",
+        "edad":  51,
+        "nacionalidad":  "Suiza",
+        "experiencia":  20,
+        "estiloDeJuego":  "Flexible, compacto y de transiciones."
+    },
+    {
+        "id":  9,
+        "nombre":  "Carlo",
+        "apellido":  "Ancelotti",
+        "edad":  67,
+        "nacionalidad":  "Brasil",
+        "experiencia":  31,
+        "estiloDeJuego":  "Ofensivo, flexible y equilibrado."
+    },
+    {
+        "id":  10,
+        "nombre":  "Mohamed",
+        "apellido":  "Ouahbi",
+        "edad":  49,
+        "nacionalidad":  "Marruecos",
+        "experiencia":  29,
+        "estiloDeJuego":  "Técnico, intenso y orientado a la posesión."
+    },
+    {
+        "id":  11,
+        "nombre":  "Sébastien",
+        "apellido":  "Migné",
+        "edad":  53,
+        "nacionalidad":  "Haití",
+        "experiencia":  28,
+        "estiloDeJuego":  "Compacto, físico y de contraataque."
+    },
+    {
+        "id":  12,
+        "nombre":  "Steve",
+        "apellido":  "Clarke",
+        "edad":  62,
+        "nacionalidad":  "Escocia",
+        "experiencia":  27,
+        "estiloDeJuego":  "Defensivo, directo y fuerte a balón parado."
+    },
+    {
+        "id":  13,
+        "nombre":  "Mauricio",
+        "apellido":  "Pochettino",
+        "edad":  54,
+        "nacionalidad":  "Estados Unidos",
+        "experiencia":  17,
+        "estiloDeJuego":  "Presión alta, intensidad y ataques verticales."
+    },
+    {
+        "id":  14,
+        "nombre":  "Gustavo",
+        "apellido":  "Alfaro",
+        "edad":  63,
+        "nacionalidad":  "Paraguay",
+        "experiencia":  34,
+        "estiloDeJuego":  "Orden defensivo, intensidad y transiciones."
+    },
+    {
+        "id":  15,
+        "nombre":  "Tony",
+        "apellido":  "Popovic",
+        "edad":  52,
+        "nacionalidad":  "Australia",
+        "experiencia":  17,
+        "estiloDeJuego":  "Físico, organizado y de presión intensa."
+    },
+    {
+        "id":  16,
+        "nombre":  "Vincenzo",
+        "apellido":  "Montella",
+        "edad":  52,
+        "nacionalidad":  "Turquía",
+        "experiencia":  15,
+        "estiloDeJuego":  "Ofensivo, técnico y de posesión vertical."
+    },
+    {
+        "id":  17,
+        "nombre":  "Julian",
+        "apellido":  "Nagelsmann",
+        "edad":  38,
+        "nacionalidad":  "Alemania",
+        "experiencia":  10,
+        "estiloDeJuego":  "Ofensivo, flexible y de presión alta."
+    },
+    {
+        "id":  18,
+        "nombre":  "Dick",
+        "apellido":  "Advocaat",
+        "edad":  78,
+        "nacionalidad":  "Curazao",
+        "experiencia":  46,
+        "estiloDeJuego":  "Pragmático, organizado y de juego directo."
+    },
+    {
+        "id":  19,
+        "nombre":  "Emerse",
+        "apellido":  "Faé",
+        "edad":  42,
+        "nacionalidad":  "Costa de Marfil",
+        "experiencia":  5,
+        "estiloDeJuego":  "Equilibrado, físico y de transiciones rápidas."
+    },
+    {
+        "id":  20,
+        "nombre":  "Sebastián",
+        "apellido":  "Beccacece",
+        "edad":  45,
+        "nacionalidad":  "Ecuador",
+        "experiencia":  23,
+        "estiloDeJuego":  "Intenso, ofensivo y de presión alta."
+    },
+    {
+        "id":  21,
+        "nombre":  "Ronald",
+        "apellido":  "Koeman",
+        "edad":  63,
+        "nacionalidad":  "Países Bajos",
+        "experiencia":  26,
+        "estiloDeJuego":  "Posesión, amplitud y salida desde el fondo."
+    },
+    {
+        "id":  22,
+        "nombre":  "Hajime",
+        "apellido":  "Moriyasu",
+        "edad":  57,
+        "nacionalidad":  "Japón",
+        "experiencia":  14,
+        "estiloDeJuego":  "Dinámico, disciplinado y de transiciones rápidas."
+    },
+    {
+        "id":  23,
+        "nombre":  "Graham",
+        "apellido":  "Potter",
+        "edad":  51,
+        "nacionalidad":  "Suecia",
+        "experiencia":  18,
+        "estiloDeJuego":  "Posesión flexible, presión y juego asociativo."
+    },
+    {
+        "id":  24,
+        "nombre":  "Hervé",
+        "apellido":  "Renard",
+        "edad":  57,
+        "nacionalidad":  "Túnez",
+        "experiencia":  27,
+        "estiloDeJuego":  "Compacto, intenso y de contraataque."
+    },
+    {
+        "id":  25,
+        "nombre":  "Rudi",
+        "apellido":  "Garcia",
+        "edad":  62,
+        "nacionalidad":  "Bélgica",
+        "experiencia":  32,
+        "estiloDeJuego":  "Ofensivo, técnico y de posesión vertical."
+    },
+    {
+        "id":  26,
+        "nombre":  "Hossam",
+        "apellido":  "Hassan",
+        "edad":  59,
+        "nacionalidad":  "Egipto",
+        "experiencia":  18,
+        "estiloDeJuego":  "Directo, intenso y con énfasis ofensivo."
+    },
+    {
+        "id":  27,
+        "nombre":  "Amir",
+        "apellido":  "Ghalenoei",
+        "edad":  62,
+        "nacionalidad":  "Irán",
+        "experiencia":  27,
+        "estiloDeJuego":  "Ofensivo, físico y de juego directo."
+    },
+    {
+        "id":  28,
+        "nombre":  "Darren",
+        "apellido":  "Bazeley",
+        "edad":  53,
+        "nacionalidad":  "Nueva Zelanda",
+        "experiencia":  15,
+        "estiloDeJuego":  "Organizado, físico y de transiciones."
+    },
+    {
+        "id":  29,
+        "nombre":  "Luis",
+        "apellido":  "de la Fuente",
+        "edad":  64,
+        "nacionalidad":  "España",
+        "experiencia":  29,
+        "estiloDeJuego":  "Posesión, amplitud y presión tras pérdida."
+    },
+    {
+        "id":  30,
+        "nombre":  "Pedro Leitão",
+        "apellido":  "Brito",
+        "edad":  56,
+        "nacionalidad":  "Cabo Verde",
+        "experiencia":  14,
+        "estiloDeJuego":  "Compacto, solidario y de contraataque."
+    },
+    {
+        "id":  31,
+        "nombre":  "Georgios",
+        "apellido":  "Donis",
+        "edad":  56,
+        "nacionalidad":  "Arabia Saudita",
+        "experiencia":  24,
+        "estiloDeJuego":  "Posesión dinámica, presión y ataques verticales."
+    },
+    {
+        "id":  32,
+        "nombre":  "Marcelo",
+        "apellido":  "Bielsa",
+        "edad":  70,
+        "nacionalidad":  "Uruguay",
+        "experiencia":  39,
+        "estiloDeJuego":  "Presión alta, ritmo intenso y juego vertical."
+    },
+    {
+        "id":  33,
+        "nombre":  "Didier",
+        "apellido":  "Deschamps",
+        "edad":  57,
+        "nacionalidad":  "Francia",
+        "experiencia":  25,
+        "estiloDeJuego":  "Equilibrado, pragmático y de transiciones rápidas."
+    },
+    {
+        "id":  34,
+        "nombre":  "Pape",
+        "apellido":  "Thiaw",
+        "edad":  45,
+        "nacionalidad":  "Senegal",
+        "experiencia":  8,
+        "estiloDeJuego":  "Físico, intenso y vertical."
+    },
+    {
+        "id":  35,
+        "nombre":  "Graham",
+        "apellido":  "Arnold",
+        "edad":  62,
+        "nacionalidad":  "Irak",
+        "experiencia":  37,
+        "estiloDeJuego":  "Organizado, físico y de presión coordinada."
+    },
+    {
+        "id":  36,
+        "nombre":  "Ståle",
+        "apellido":  "Solbakken",
+        "edad":  58,
+        "nacionalidad":  "Noruega",
+        "experiencia":  24,
+        "estiloDeJuego":  "Directo, vertical y orientado al ataque."
+    },
+    {
+        "id":  37,
+        "nombre":  "Lionel",
+        "apellido":  "Scaloni",
+        "edad":  48,
+        "nacionalidad":  "Argentina",
+        "experiencia":  8,
+        "estiloDeJuego":  "Ofensivo, flexible y de posesión vertical."
+    },
+    {
+        "id":  38,
+        "nombre":  "Vladimir",
+        "apellido":  "Petković",
+        "edad":  62,
+        "nacionalidad":  "Argelia",
+        "experiencia":  29,
+        "estiloDeJuego":  "Equilibrado, técnico y de transiciones."
+    },
+    {
+        "id":  39,
+        "nombre":  "Ralf",
+        "apellido":  "Rangnick",
+        "edad":  67,
+        "nacionalidad":  "Austria",
+        "experiencia":  43,
+        "estiloDeJuego":  "Presión alta, intensidad y verticalidad."
+    },
+    {
+        "id":  40,
+        "nombre":  "Jamal",
+        "apellido":  "Sellami",
+        "edad":  55,
+        "nacionalidad":  "Jordania",
+        "experiencia":  15,
+        "estiloDeJuego":  "Compacto, disciplinado y de contraataque."
+    },
+    {
+        "id":  41,
+        "nombre":  "Roberto",
+        "apellido":  "Martínez",
+        "edad":  52,
+        "nacionalidad":  "Portugal",
+        "experiencia":  19,
+        "estiloDeJuego":  "Ofensivo, de posesión y con amplitud."
+    },
+    {
+        "id":  42,
+        "nombre":  "Sébastien",
+        "apellido":  "Desabre",
+        "edad":  49,
+        "nacionalidad":  "República Democrática del Congo",
+        "experiencia":  20,
+        "estiloDeJuego":  "Vertical, físico y de transiciones rápidas."
+    },
+    {
+        "id":  43,
+        "nombre":  "Fabio",
+        "apellido":  "Cannavaro",
+        "edad":  52,
+        "nacionalidad":  "Uzbekistán",
+        "experiencia":  12,
+        "estiloDeJuego":  "Organizado, defensivo y de salida rápida."
+    },
+    {
+        "id":  44,
+        "nombre":  "Néstor",
+        "apellido":  "Lorenzo",
+        "edad":  60,
+        "nacionalidad":  "Colombia",
+        "experiencia":  26,
+        "estiloDeJuego":  "Ofensivo, equilibrado y de posesión vertical."
+    },
+    {
+        "id":  45,
+        "nombre":  "Thomas",
+        "apellido":  "Tuchel",
+        "edad":  52,
+        "nacionalidad":  "Inglaterra",
+        "experiencia":  19,
+        "estiloDeJuego":  "Posesión estructurada, presión y flexibilidad táctica."
+    },
+    {
+        "id":  46,
+        "nombre":  "Zlatko",
+        "apellido":  "Dalić",
+        "edad":  59,
+        "nacionalidad":  "Croacia",
+        "experiencia":  22,
+        "estiloDeJuego":  "Técnico, equilibrado y de control del mediocampo."
+    },
+    {
+        "id":  47,
+        "nombre":  "Carlos",
+        "apellido":  "Queiroz",
+        "edad":  73,
+        "nacionalidad":  "Ghana",
+        "experiencia":  37,
+        "estiloDeJuego":  "Pragmático, compacto y de transiciones."
+    },
+    {
+        "id":  48,
+        "nombre":  "Thomas",
+        "apellido":  "Christiansen",
+        "edad":  53,
+        "nacionalidad":  "Panamá",
+        "experiencia":  13,
+        "estiloDeJuego":  "Posesión, presión alta y juego asociativo."
+    }
+]

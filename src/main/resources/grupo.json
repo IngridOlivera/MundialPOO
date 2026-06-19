@@ -1,0 +1,218 @@
+﻿[
+    {
+        "id":  1,
+        "nombre":  "Grupo A",
+        "seleccionIds":  [
+                             1,
+                             2,
+                             3,
+                             4
+                         ],
+        "partidoIds":  [
+                           1,
+                           2,
+                           3,
+                           4,
+                           5,
+                           6
+                       ]
+    },
+    {
+        "id":  2,
+        "nombre":  "Grupo B",
+        "seleccionIds":  [
+                             5,
+                             6,
+                             7,
+                             8
+                         ],
+        "partidoIds":  [
+                           7,
+                           8,
+                           9,
+                           10,
+                           11,
+                           12
+                       ]
+    },
+    {
+        "id":  3,
+        "nombre":  "Grupo C",
+        "seleccionIds":  [
+                             9,
+                             10,
+                             11,
+                             12
+                         ],
+        "partidoIds":  [
+                           13,
+                           14,
+                           15,
+                           16,
+                           17,
+                           18
+                       ]
+    },
+    {
+        "id":  4,
+        "nombre":  "Grupo D",
+        "seleccionIds":  [
+                             13,
+                             14,
+                             15,
+                             16
+                         ],
+        "partidoIds":  [
+                           19,
+                           20,
+                           21,
+                           22,
+                           23,
+                           24
+                       ]
+    },
+    {
+        "id":  5,
+        "nombre":  "Grupo E",
+        "seleccionIds":  [
+                             17,
+                             18,
+                             19,
+                             20
+                         ],
+        "partidoIds":  [
+                           25,
+                           26,
+                           27,
+                           28,
+                           29,
+                           30
+                       ]
+    },
+    {
+        "id":  6,
+        "nombre":  "Grupo F",
+        "seleccionIds":  [
+                             21,
+                             22,
+                             23,
+                             24
+                         ],
+        "partidoIds":  [
+                           31,
+                           32,
+                           33,
+                           34,
+                           35,
+                           36
+                       ]
+    },
+    {
+        "id":  7,
+        "nombre":  "Grupo G",
+        "seleccionIds":  [
+                             25,
+                             26,
+                             27,
+                             28
+                         ],
+        "partidoIds":  [
+                           37,
+                           38,
+                           39,
+                           40,
+                           41,
+                           42
+                       ]
+    },
+    {
+        "id":  8,
+        "nombre":  "Grupo H",
+        "seleccionIds":  [
+                             29,
+                             30,
+                             31,
+                             32
+                         ],
+        "partidoIds":  [
+                           43,
+                           44,
+                           45,
+                           46,
+                           47,
+                           48
+                       ]
+    },
+    {
+        "id":  9,
+        "nombre":  "Grupo I",
+        "seleccionIds":  [
+                             33,
+                             34,
+                             35,
+                             36
+                         ],
+        "partidoIds":  [
+                           49,
+                           50,
+                           51,
+                           52,
+                           53,
+                           54
+                       ]
+    },
+    {
+        "id":  10,
+        "nombre":  "Grupo J",
+        "seleccionIds":  [
+                             37,
+                             38,
+                             39,
+                             40
+                         ],
+        "partidoIds":  [
+                           55,
+                           56,
+                           57,
+                           58,
+                           59,
+                           60
+                       ]
+    },
+    {
+        "id":  11,
+        "nombre":  "Grupo K",
+        "seleccionIds":  [
+                             41,
+                             42,
+                             43,
+                             44
+                         ],
+        "partidoIds":  [
+                           61,
+                           62,
+                           63,
+                           64,
+                           65,
+                           66
+                       ]
+    },
+    {
+        "id":  12,
+        "nombre":  "Grupo L",
+        "seleccionIds":  [
+                             45,
+                             46,
+                             47,
+                             48
+                         ],
+        "partidoIds":  [
+                           67,
+                           68,
+                           69,
+                           70,
+                           71,
+                           72
+                       ]
+    }
+]
