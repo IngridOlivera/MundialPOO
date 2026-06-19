@@ -1,4 +1,4 @@
-package proyecto.mundial.clases;
+package proyecto.mundial.modelos;
 
 public class DirectorTecnico extends Persona {
     private int experiencia;

@@ -1,4 +1,4 @@
-package proyecto.mundial.clases;
+package proyecto.mundial.modelos;
 
 public class Partido {
     private Seleccion seleccionLocal;
@@ -17,10 +17,20 @@ public class Partido {
         this.estado = "Programado";
     }
 
-    public void registrarResultado(int golesLocales, int golesVisitante) {
-        this.golesLocal = golesLocales;
-        this.golesVisitante = golesVisitante;
-        this.estado = "Finalizado";
+    public void actualizarGolesLocal(int golesLocales) {
+        if (!estado.equals("Finalizado")) {
+            this.golesLocal = golesLocales;
+        }
+    }
+    public void actualizarGolesVisitante(int golesVisitante) {
+        if (!estado.equals("Finalizado")) {
+            this.golesVisitante = golesVisitante;
+        }
+    }
+    public void actualizarEstado(String estado) {
+        if (!this.estado.equals("Finalizado")) {
+            this.estado = estado;
+        }
     }
 
     public Seleccion getSeleccionLocal() {

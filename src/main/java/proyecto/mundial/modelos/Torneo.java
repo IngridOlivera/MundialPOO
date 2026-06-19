@@ -1,4 +1,4 @@
-package proyecto.mundial.clases;
+package proyecto.mundial.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,5 +53,13 @@ public class Torneo {
 
     public List<Seleccion> getSelecciones() {
         return selecciones;
+    }
+    public Seleccion buscarSeleccionPorNombre(String nombre) {
+        for (int i = 0; i<selecciones.size(); i++) {
+            if (selecciones.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                return selecciones.get(i);
+            }
+        }
+        return null;
     }
 }
